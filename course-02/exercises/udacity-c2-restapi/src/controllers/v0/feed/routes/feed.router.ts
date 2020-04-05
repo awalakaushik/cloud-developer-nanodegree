@@ -29,7 +29,18 @@ router.patch('/:id',
     requireAuth, 
     async (req: Request, res: Response) => {
         //@TODO try it yourself
-        res.send(500).send("not implemented")
+        const { id } = req.params;
+        const patchBody = req.body;
+
+        const result = await FeedItem.update(patchBody, { where: { id: id } });
+
+        if (result) {
+            const updatedItem = await FeedItem.findOne(id);
+            res.status(201).send(updatedItem);
+            return;
+        }
+
+        res.status(500).send("Update failed!")
 });
 
 
