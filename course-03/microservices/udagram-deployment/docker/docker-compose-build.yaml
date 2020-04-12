@@ -6,13 +6,13 @@ services:
     image: awalakaushik/reverseproxy 
   backend_user:
     build:
-      context: ../../udacity-c3-restapi-user
-    image: awalakaushik/udacity-restapi-user
+      context: ../../udagram-restapi-user
+    image: awalakaushik/udagram-restapi-user
   backend_feed:
     build:
-      context: ../../udacity-c3-restapi-feed  
-    image: awalakaushik/udacity-restapi-feed
+      context: ../../udagram-restapi-feed  
+    image: awalakaushik/udagram-restapi-feed
   frontend:
     build:
-      context: ../../udacity-c3-frontend  
-    image: awalakaushik/udacity-frontend:local
+      context: ../../udagram-frontend  
+    image: awalakaushik/udagram-frontend:local
